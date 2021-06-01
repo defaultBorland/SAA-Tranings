@@ -1,0 +1,190 @@
+#include "Arsenal\arsenalUI.hpp"
+
+author = "> Borland";
+onLoadName = "SAA Training";
+//loadScreen 		= "img\logo.jpg";
+respawn = 3;
+respawnDelay = 30;
+respawnButton = 0;
+respawnOnStart = -1;
+respawnTemplates[] = {"MenuPosition", "Spectator", "Autorespawn", "Tickets", "Wave"};
+saving = 0;
+disabledAI = 1;
+enableDebugConsole = 1;
+debriefing = 0;
+allowProfileGlasses = 0;
+
+//Function library definitions
+class CfgFunctions
+{
+    class Shadec
+    {
+		class Arsenal {
+			class addShadecArsenal {};
+			class addEquipment {};
+			class addUniform {};
+			class addActionArsenalGen {};
+			class arsenalGen {file = "Arsenal\fn_arsenalGen.sqf";};
+		};
+		class Classes {
+			class classSwitcher {};
+			class Rifleman {};
+			class Nurse {};
+			class Machinegunner {};
+			class Grenadier {};
+			class Engineer {};
+			class ATSpec {};
+			class Medic {};
+			class Marksman {};
+			class Sniper {};
+		};
+		class Gameplay {
+			class endMission {};
+			class playersList {};
+			class rolesAssign {};
+			class showUserInfo {};
+		};
+		class Generic {
+			class clearVehicleInventory {};
+			class reLoadoutUnit {};
+			class usersIDs {};
+		};
+		class Radio {
+			class assignJammer {};
+			class objectJamming {};
+			class replaceVehicleRadio {};
+			class radioSignalQuality {};
+		};
+		class Respawn {
+			class assignFob {};
+			class changeRespawnState {};
+			class changeRespawnTickets {};
+			class changeRespawnTime {};
+			class createRespawnPoint {};
+			class forceRespawnTimer {};
+			class removeFob {};
+			class removeRespawnPoint {};
+		};
+		class Zeus {
+			class addZeusModules {};
+			class manageCurators {};
+			class promoteToZeus {};
+		};
+
+		class Mechanics {
+			class renameGroupDisplay {file = "Mechanics\GroupNaming\fn_renameGroupDisplay.sqf";};
+		};
+    };
+};
+
+//Remote execution config
+class CfgRemoteExec
+{
+    class Functions {
+		mode = 2;
+		jip = 1;
+		class BIS_fnc_debugConsoleExec {allowedTargets = 0;};
+		class call_db {allowedTargets = 2;};
+		class changeRespawnTickets {allowedTargets = 2;};
+		class forceRespawnTimer {allowedTargets = 2;};
+		class changeRespawnState {allowedTargets = 2;};
+		class playerRespawnInfo {allowedTargets = 2;};
+		class endMission {allowedTargets = 2;};
+		class playersList {allowedTargets = 2;};
+		class moveRespawnMarker {allowedTargets = 2;};
+		class addToStorage {allowedTargets = 0;};
+		class reLoadoutUnit {allowedTargets = 2;};
+		class rolesAssign {allowedTargets = 2;};
+		class addShadecArsenal {allowedTargets = 2;};
+		class changeRespawnTime {allowedTargets = 2;};
+		class respawnTeleport {allowedTargets = 2;};
+		class usersIDs {allowedTargets = 2;};
+		class assignStorage {allowedTargets = 2;};
+		class initStorage {allowedTargets = 2;}
+		class assignFob {allowedTargets = 2;};
+		class removeStorage {allowedTargets = 2;};
+		class removeFob {allowedTargets = 2;};
+		class assignJammer {allowedTargets = 2;};
+		class objectJamming {allowedTargets = 0;};
+		class radioSignalQuality {allowedTargets = 0;};
+		class clearVehicleInventory {allowedTargets = 2;};
+		class storageOutputFormat {allowedTargets = 0;};
+		class manageCurators {allowedTargets = 2;};
+		class createRespawnPoint {allowedTargets = 2;};
+		class removeRespawnPoint {allowedTargets = 2;};
+		class changeClasses {allowedTargets = 2;};
+		class saveModlist {allowedTargets = 2;};
+		class addArsenalSpecificItems {allowedTargets = 2;};
+		class addActionToStorage {allowedTargets = 1;};
+		class removeActionFromStorage {allowedTargets = 1;};
+		class replaceVehicleRadio {allowedTargets = 2;};
+    };
+};
+
+class CfgDebriefing
+{  
+	class Win {
+		title = "Mission Complete";
+		subtitle = "Respect+";
+		description = "";
+		picture = "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsUp_ca";
+		pictureColor[] = {0.1,0.6,0.2,1};
+	};
+
+	class Lose {
+		title = "Mission Failed";
+		subtitle = "We'll get em next time?...";
+		description = "";
+		picture = "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsDown_ca";
+		pictureColor[] = {0.6,0.1,0.2,1};
+	};
+
+	class toBeContinued {
+		title = "To be continued...";
+		subtitle = "Until next time...";
+		description = "\A3\UI_F\data\Map\Diary\Icons\unitGroupPlayable_ca";
+		pictureColor[] = {1,1,1,1};
+	};
+
+	class allDead {
+		title = "You all died!";
+		subtitle = "Everyone is dead.";
+		description = "";
+		picture = "\A3\UI_F\data\GUI\Cfg\Debriefing\endDeath_ca";
+		pictureColor[] = {0.6,0.1,0.2,1};
+	};
+
+	class missingMap {
+		title = "Missing Map";
+		subtitle = "Server and Client Map missmatch";
+		description = "Go to Arma 3 Launcher and activate neccessary map.";
+		picture = "\A3\UI_F\data\GUI\Cfg\Debriefing\endDefault_ca";
+		pictureColor[] = {0.6,0.1,0.2,1};
+	};
+
+	class somethingWentWrong {
+		title = "Something Went Wrong";
+		subtitle = "Inform administration about your problem";
+		description = "Do not try to rejoin, inform administration first.";
+		picture = "\A3\UI_F\data\GUI\Cfg\Hints\Doors_ca";
+		pictureColor[] = {1,1,1,1};
+	};
+
+	class promotedToZeus {
+		title = "Promoted To Zeus";
+		subtitle = "You have been promoted to SAA-Zeus";
+		description = "Your data was saved. Please, reselect playable slot and proceed.";
+		picture = "\A3\UI_F\data\GUI\Cfg\Debriefing\endDefault_ca";
+		pictureColor[] = {0.1,0.6,0.1,1};
+	};
+};
+
+disableChannels[] = {
+	{ 0, false, true },
+	{ 1, false, true },
+	{ 2, true, true },
+	{ 3, true, true },
+	{ 4, true, true },
+	{ 5, true, false },
+	{ 6, false, true }
+};
