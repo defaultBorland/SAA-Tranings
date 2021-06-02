@@ -12,4 +12,5 @@ In file `initZeus.sqf` add desired SteamID64 strings to array: (ex)
   - LICENSE
   - mission.sqm (If you have your own)
   
-  - To be continued (maybe) ...
+  
+To be continued (maybe) ...
