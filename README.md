@@ -1,6 +1,10 @@
 # SAA-Tranings
 Main Scripts Branch without DB for trainings with arsenal generation.
 
+- How make things works:
+
+Just place all the files within mission.sqm file in mission directory.
+
 - How to assign predefined Zeuses (Other Zeuses can be assigned on the fly by corresponding module in SAA-Main):
 
 In file `initZeus.sqf` add desired SteamID64 strings to array:
