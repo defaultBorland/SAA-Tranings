@@ -7,7 +7,10 @@ How to make things works:
 How to assign predefined Zeuses (Other Zeuses can be assigned on the fly by corresponding module in SAA-Main):
 - In file `initZeus.sqf` add desired SteamID64 strings to array:
 
-`_zeuses = ["76561198042919168", "76561198066438612"];`
+        _zeuses = [
+           "76561198042919168", 
+           "76561198066438612"
+        ];
 
 How to import server settings from `ServerSettings.txt` to your server:
  - Copy whole content from `ServerSettings.txt`;
