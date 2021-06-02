@@ -9,7 +9,6 @@ with uiNamespace do {
 		params ["_ctrl"];
 		{
 			[format["> Server: FPS - %1 (OK > 25)", diag_fps]] remoteExec ["systemChat", remoteExecutedOwner];
-			"debug_console" callExtension (("Server FPS: " + str diag_fps) + "#1111");
 		} remoteExec ["call", 2];
 	}];
 };
