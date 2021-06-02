@@ -2,8 +2,8 @@
 Main Scripts Branch without DB for trainings with arsenal generation.
 
 - How to assign predefined Zeuses (Other Zeuses can be assigned on the fly by corresponding module in SAA-Main):
-In file `initZeus.sqf` add desired SteamID64 strings to array:
-(ex)  
+
+In file `initZeus.sqf` add desired SteamID64 strings to array: (ex)  
 
 `_zeuses = ["76561198042919168", "76561198066438612"];`
 
