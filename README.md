@@ -13,6 +13,7 @@ Which files you can exclude from mission folder while hosting your own mission:
  - .gitattributes
  - LICENSE
  - mission.sqm (If you have your own)
+ - README.md
   
   
 To be continued (maybe) ...
