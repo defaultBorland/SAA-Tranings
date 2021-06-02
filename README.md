@@ -1,7 +1,7 @@
 # SAA-Tranings
 Main Scripts Branch without DB for trainings with arsenal generation.
 
-- How make things works:
+- How to make things works:
 
 Just place all the files within mission.sqm file in mission directory.
 
