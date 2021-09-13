@@ -15,3 +15,8 @@ missionNamespace setVariable ["tf_sendVar", 1, true];
 {deleteMarker _x} forEach (allMapMarkers select {"respawn" in _x});
 respawnTime = getNumber (missionConfigFile >> "respawnDelay");
 missionNamespace setVariable ["respawnTime", respawnTime, true];
+
+{ // Nulify respawn tickets for each side
+	[_x, 1] call BIS_fnc_respawnTickets;
+	[_x, -1] call BIS_fnc_respawnTickets;
+} forEach [west, east, independent, civilian];

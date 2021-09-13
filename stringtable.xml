@@ -1,4 +1,4 @@
-﻿<Container name="Low Gear">
+﻿<Container name = "Low Gear">
 
     <Key ID="STR_RIP_LOWGEARON"> 
         <Original>High-climbing gear (on)</Original> 
@@ -12,41 +12,131 @@
 
 </Container>
 
-<Container name="Group Naming">
+<Container name = "Group Naming">
 
-    <Key ID="STR_GROUPNAMING_TITLE_ENTERNAME"> 
+    <Key ID="STR_SAA_GROUPNAMING_ACTION_NAME"> 
+        <Original>Rename Group</Original> 
+        <Russian>Переименовать Группу</Russian> 
+    </Key> 
+
+    <Key ID="STR_SAA_GROUPNAMING_TITLE_ENTERNAME"> 
         <Original>Enter Group Name: </Original> 
         <Russian>Введите имя группы: </Russian> 
     </Key>
 
-    <Key ID="STR_GROUPNAMING_ERROR_ALREADYEXISTS"> 
+    <Key ID="STR_SAA_GROUPNAMING_ERROR_GROUPNAME_ALREADY_EXISTS"> 
         <Original>ERROR: This Group Name is already selected, choose another one.</Original> 
         <Russian>ОШИБКА: Название группы уже кем-то занято, выберите другое.</Russian> 
     </Key>
 
 </Container>
 
-<Container name="Actions">
+<Container name = "Check Tickets">
 
-    <Key ID="SAA_SAA_STORAGE_ACTION"> 
-        <Original>Personal Storage</Original> 
-        <Russian>Личное Хранилище</Russian> 
+    <Key ID="STR_SAA_SHOWTICKETS_ACTIONNAME"> 
+        <Original>Tickets</Original> 
+        <Russian>Тикеты</Russian> 
     </Key>
 
-    <Key ID="SAA_SAA_ASSIGN_ZEUS_ACTION"> 
+    <Key ID="STR_SAA_SHOWTICKETS_NO_RESPAWN_POINT_AVAILIABLE"> 
+        <Original>No respawn points available</Original> 
+        <Russian>Нет доступных точек возрождения</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_SHOWTICKETS_UNLIMITED"> 
+        <Original>Неограничено</Original> 
+        <Russian>Unlimited</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_SHOWTICKETS_TICKETS_LEFT"> 
+        <Original>Tickets left</Original> 
+        <Russian>Осталось тикетов</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_SHOWTICKETS_TICKETS_CHANGE_CHATMESSAGE"> 
+        <Original>Amount of respawn tickets was changed</Original> 
+        <Russian>Количество тикетов было изменено</Russian> 
+    </Key>
+
+</Container>
+
+<Container name = "Force Join To Squad">
+
+    <Key ID="STR_SAA_FORCE_JOIN_TO_SQUAD_ACTIONNAME"> 
+        <Original>Join to squad</Original> 
+        <Russian>Добавить в отряд</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_FORCE_JOIN_TO_SQUAD_CHATINFO"> 
+        <Original>was joined to squad by</Original> 
+        <Russian>был присоединён в отряд</Russian>
+    </Key>
+
+</Container>
+
+<Container name = "Force Remove From Squad">
+
+    <Key ID="STR_SAA_FORCE_REMOVE_FROM_SQUAD_ACTIONNAME"> 
+        <Original>Remove from squad</Original> 
+        <Russian>Удалить из отряда</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_FORCE_REMOVE_FROM_SQUAD_CHATINFO"> 
+        <Original>was removed from squad by</Original> 
+        <Russian>был удалён из отряда</Russian>
+    </Key>
+
+</Container>
+
+<Container name = "Squad List">
+
+    <Key ID="STR_SAA_SQUADLIST_ACTION_NAME"> 
+        <Original>Squad Info</Original> 
+        <Russian>Мой отряд</Russian> 
+    </Key> 
+
+</Container>
+
+<Container name = "Release UAV Control">
+
+    <Key ID="STR_SAA_RELEASE_UAV_CONTROL"> 
+        <Original>Release UAV controls</Original> 
+        <Russian>Бросить управление БПА</Russian> 
+    </Key> 
+
+</Container>
+
+<Container name = "Door Breaching">
+
+    <Key ID="STR_SAA_SET_A_BREACHING_CHARGE"> 
+        <Original>Set a breaching charge</Original> 
+        <Russian>Установить подрывной заряд</Russian> 
+    </Key> 
+
+    <Key ID="STR_SAA_TOUCH_OFF_BREACH"> 
+        <Original>Touch off (breach)</Original> 
+        <Russian>Взорвать (проломить)</Russian> 
+    </Key> 
+
+</Container>
+
+
+<Container name = "Actions">
+
+    <Key ID="STR_SAA_ASSIGN_ZEUS_ACTION"> 
         <Original>Re-Assign Zeus</Original> 
         <Russian>Получить Зевса</Russian> 
     </Key>
 
-    <Key ID="SAA_GROUPNAMING_ACTION_NAME"> 
-        <Original>Rename Group</Original> 
-        <Russian>Переименовать Группу</Russian> 
-    </Key> 
+    <Key ID="STR_SAA_TEAM_MANAGEMENT_ACTION"> 
+        <Original>Team Management</Original> 
+        <Russian>Управление отрядом</Russian> 
+    </Key>
 
-    <Key ID="SAA_SQUADLIST_ACTION_NAME"> 
-        <Original>Squad Info</Original> 
-        <Russian>Информация по отряду</Russian> 
-    </Key> 
+    <Key ID="STR_SAA_FIX_LOADOUT_ACTION"> 
+        <Original>Fix Loadout</Original> 
+        <Russian>Исправить лодаут</Russian> 
+    </Key>
 
 </Container>
 

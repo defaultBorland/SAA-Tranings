@@ -27,11 +27,20 @@ if (!isNil {missionNamespace getVariable format["%1_INVENTORY", _uid]}) then {
 	[[player, getPlayerUID player], Shadec_fnc_reLoadoutUnit] remoteExec ["call", 2];
 };
 
-// Execute EHs
+
+// Add Actions
+[] execVM "Mechanics\Root\RootActions_init.sqf";
+[] execVM "Mechanics\Reloadout\LoadoutFix_init.sqf";
+
 [] execVM "Mechanics\LowGear\LowGear_Init.sqf";
-[] execVM "Mechanics\GroupNaming\GroupNaming_Init.sqf";
-[] execVM "Mechanics\PlayersList\PlayersList_Init.sqf";
-[] execVM "Mechanics\SquadList\SquadList_Init.sqf";
+[] execVM "Mechanics\TeamManagement\PlayersList_Init.sqf";
+[] execVM "Mechanics\TeamManagement\SquadList_Init.sqf";
+[] execVM "Mechanics\TeamManagement\GroupNaming_Init.sqf";
+[] execVM "Mechanics\TeamManagement\ForceJoinToSquad_Init.sqf";
+[] execVM "Mechanics\TeamManagement\ForceRemoveFromSquad_Init.sqf";
+[] execVM "Mechanics\ShowTickets\ShowTickets_Init.sqf";
+
+// Execute EHs
 [] execVM "EH\player\serverFps.sqf";
 script_handler = [] execVM "EH\player\playerKilled.sqf";
 [] execVM "EH\player\playerRespawn.sqf";
